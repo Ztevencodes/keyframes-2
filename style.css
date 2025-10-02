@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Henny Penny', sans-serif;
+    background: #1b1b1b; /* Eerie Black */
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 25px 0;
+    color: #e6530eff; /* Pumpkin */
+}
+
+.container {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.loader {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    animation: spin 2s linear infinite;
+}
+
+.loader::before, .loader::after { 
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 35px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #e6530eff; /* Pumpkin */
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.loader::after {
+    left: -35px;
+    background: #830eaaff; /* Royal Jack */
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
